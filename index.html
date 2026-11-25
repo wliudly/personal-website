@@ -291,8 +291,15 @@
     .section-poster-h2 { font: 400 clamp(2.8rem, 5.8vw, 5.2rem)/0.94 var(--display); letter-spacing: -0.03em; margin: 0; }
     #lang-zh:checked ~ .site .section-poster-h2 { font-size: clamp(2.2rem, 4.5vw, 3.9rem); line-height: 1.08; letter-spacing: 0; }
     .cinema-asymmetric { display: grid; grid-template-columns: repeat(12, 1fr); gap: 28px; align-items: start; }
-    .film-lead-plate { grid-column: 1 / 9; }
-    .film-poster-plate { grid-column: 9 / 13; }
+    .enigma-triptych {
+      grid-column: 1 / 13;
+      display: grid;
+      grid-template-columns: 1.60fr 1.50fr 0.705fr;
+      gap: 24px;
+      align-items: start;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--curtain-line);
+    }
     .film-mid-a { grid-column: 1 / 5; margin-top: 24px; }
     .film-mid-b { grid-column: 5 / 9; margin-top: 24px; }
     .film-mid-c { grid-column: 9 / 13; margin-top: 24px; }
@@ -333,8 +340,26 @@
     .ped-list li { padding: 8px 0; border-top: 1px solid var(--line); }
     .ped-list strong { font-weight: 600; }
 
-    /* FRAME 05: LIVE PLAYABLE IMPROVISATION STUDIO */
-    .lab-section { display: grid; grid-template-columns: 4fr 8fr; border-bottom: 1px solid var(--ink); }
+    /* FRAME 05: LIVE PLAYABLE IMPROVISATION STUDIO & ICHEC 2026 ON-SITE ARCHIVE */
+    .lab-section { display: grid; grid-template-columns: 4fr 8fr; border-bottom: 1px solid var(--line); position: relative; }
+    .ichec-doc-section { border-bottom: 1px solid var(--ink); background: var(--ground); }
+    .ichec-doc-bar {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+      padding: 12px clamp(20px, 4vw, 56px); background: var(--surface); border-bottom: 1px solid var(--line);
+      font: 500 0.7rem/1.4 var(--mono); letter-spacing: 0.06em; color: var(--accent);
+    }
+    .ichec-doc-bar .ichec-meta-r { font-weight: 400; color: var(--muted); }
+    .ichec-doc-grid { display: grid; grid-template-columns: 3.6fr 4.2fr 4.2fr; background: var(--surface); }
+    .ichec-plate { margin: 0; display: flex; flex-direction: column; border-right: 1px solid var(--line); }
+    .ichec-plate:last-child { border-right: 0; }
+    .ichec-plate img {
+      width: 100%; height: 312px; object-fit: cover; display: block;
+      filter: contrast(1.03) saturate(0.95);
+    }
+    .ichec-plate figcaption {
+      padding: 12px 18px; background: var(--ground); border-top: 1px solid var(--line);
+      font: 400 0.71rem/1.48 var(--mono); color: var(--muted); flex: 1;
+    }
     .lab-brief { padding: clamp(36px, 5vw, 68px) clamp(20px, 3.5vw, 48px); border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
     .improv-stage {
       background-color: #0B121B; color: #EDF1F5; padding: clamp(32px, 5vw, 60px);
@@ -379,7 +404,13 @@
       .rep-drawer { grid-template-columns: 1fr; }
       .rep-spec { text-align: left; }
       .cinema-asymmetric { display: block; }
-      .film-poster-plate, .film-mid-a, .film-mid-b, .film-mid-c, .film-bot-a, .film-bot-b { margin-top: 28px; }
+      .enigma-triptych { display: block; border-bottom: 0; padding-bottom: 0; }
+      .enigma-triptych > div + div, .film-mid-a, .film-mid-b, .film-mid-c, .film-bot-a, .film-bot-b { margin-top: 28px; }
+      .enigma-poster-col { max-width: 380px; }
+      .ichec-doc-grid { grid-template-columns: 1fr; }
+      .ichec-plate { border-right: 0; border-bottom: 1px solid var(--line); }
+      .ichec-plate:last-child { border-bottom: 0; }
+      .ichec-plate img { height: auto; aspect-ratio: 16 / 10; }
       .credit-cols { grid-template-columns: 1fr; }
       .footer-meta { text-align: left; }
       .footer-meta a { margin: 0 16px 0 0; }
@@ -462,7 +493,7 @@
       <div class="ledger-cell">
         <div class="ledger-k">SCHOLARSHIP &amp; EXHIBITION</div>
         <div class="ledger-v"><span class="en">ACM MM Asia · ICHEC 2026</span><span class="zh">ACM MM Asia · ICHEC 2026</span></div>
-        <div class="ledger-sub"><span class="en">Accepted paper #533, juried Macau gallery installation, monograph in progress, TRI &amp; IJPADM pipeline</span><span class="zh">国际顶会正式录用论文、澳门评审制交互展演装置、英文专著在撰、TRI / IJPADM 外审</span></div>
+        <div class="ledger-sub"><span class="en">MMAsia ’26 paper (#533), exhibited Wynn Macau installation (#340), monograph in progress, TRI &amp; IJPADM pipeline</span><span class="zh">顶会录用论文（#533）、澳门永利现场展出交互装置（#340）、英文专著在撰、TRI / IJPADM 外审</span></div>
       </div>
       <div class="ledger-cell">
         <div class="ledger-k">UNIVERSITY TEACHING</div>
@@ -516,7 +547,7 @@
         </div>
       </details>
 
-      <details class="rep-item" data-still="/assets/enigma-arrival.jpg" data-code="ACM MULTIMEDIA ASIA 2026 · HANOI">
+      <details class="rep-item" data-still="/assets/enigma-arrival.jpg" data-code="ACM MULTIMEDIA ASIA 2026 · DOI 10.1145/3862739.3863389">
         <summary>
           <span class="r-year">2026.12</span>
           <span class="r-title"><em>Prompt as Score</em>: Relational Performance in AI-Generated Video</span>
@@ -526,9 +557,9 @@
         <div class="rep-drawer">
           <span></span>
           <div>
-            <p><span class="en">Wei Liu (first &amp; corresponding author) &amp; Feibi Liu. “Prompt as Score: Reading Relational Performance in AI-Generated Video through a Chinese Actor-Training Framework.” <em>Proceedings of ACM Multimedia Asia 2026</em> (Short Paper 533), Hanoi, Vietnam. Accepted; forthcoming in the ACM Digital Library.</span><span class="zh">Wei Liu（第一兼通讯作者）、Feibi Liu。论文以中国演员训练中的可玩提议、规定情境与动作转折为分析总谱，解读生成式 AI 视频中的关系表演机制。ACM Multimedia Asia 2026（河内）正式录用（Short Paper 533），即将收录于 ACM Digital Library。</span></p>
+            <p><span class="en">Wei Liu (first &amp; corresponding author) &amp; Feibi Liu. “Prompt as Score: Reading Relational Performance in AI-Generated Video through a Chinese Actor-Training Framework.” <em>Proceedings of ACM Multimedia Asia 2026</em> (Short Paper #533), Hanoi, Vietnam. Open Access DOI: <a href="https://doi.org/10.1145/3862739.3863389" target="_blank" rel="noopener noreferrer">10.1145/3862739.3863389 ↗</a>.</span><span class="zh">Wei Liu（第一兼通讯作者）、Feibi Liu。论文以中国演员训练中的可玩提议、规定情境与动作转折为分析总谱，细读生成式 AI 视频中的关系性表演机制。ACM Multimedia Asia 2026（河内）正式录用（Short Paper #533），Open Access DOI：<a href="https://doi.org/10.1145/3862739.3863389" target="_blank" rel="noopener noreferrer">10.1145/3862739.3863389 ↗</a>。</span></p>
           </div>
-          <div class="rep-spec">ACCEPTED<br/>ACM DIGITAL LIBRARY</div>
+          <div class="rep-spec">OPEN ACCESS · CC-BY 4.0<br/>ACM DIGITAL LIBRARY</div>
         </div>
       </details>
 
@@ -552,7 +583,7 @@
         </div>
       </details>
 
-      <details class="rep-item" data-still="/assets/workshop-scene.jpg" data-code="ICHEC 2026 ART GALLERY · WYNN MACAU">
+      <details class="rep-item" data-still="/assets/ichec-audience.jpg" data-code="ICHEC 2026 ART GALLERY · ARTWORK #340 · WYNN MACAU">
         <summary>
           <span class="r-year">2026.11</span>
           <span class="r-title"><em>Improvisation Studio</em> <span class="zh">《即兴片场》</span></span>
@@ -562,9 +593,9 @@
         <div class="rep-drawer">
           <span></span>
           <div>
-            <p><span class="en">Juried interactive art installation (Wei Liu: performance &amp; directorial design; Feibi Liu: technical implementation), ICHEC 2026 Art Gallery, Wynn Macau (24–25 Nov 2026; official ISBN exhibition e-book). Visitors act as directing coach for two live LLM performers across 14 bilingual seeds—pausing, side-coaching, taking over a role, or stepping onstage as human-only Role C. Available for 60-minute university &amp; gallery workshops via <a href="https://in-resonance.pages.dev" target="_blank" rel="noopener noreferrer">In Resonance ↗</a>.</span><span class="zh">评审制交互艺术装置（刘韦：表演与导演机制设计；Feibi Liu：技术实现），入选 2026 澳门永利 ICHEC 国际人机交互艺术画廊并收录于官方 ISBN 展览电子书。观众可作为表演指导，在 14 组中英双语情境中随时暂停、场外给戏、替演或作为第三人 C 亲自入场。可通过 <a href="https://in-resonance.pages.dev" target="_blank" rel="noopener noreferrer">星渐 In Resonance ↗</a> 预约 60 分钟高校与艺术馆双语工作坊。</span></p>
+            <p><span class="en">Juried interactive art installation (Artwork #340, 1 of 12 peer-reviewed works selected conference-wide; Wei Liu: performance &amp; directorial design; Feibi Liu: technical implementation), exhibited live at the ICHEC 2026 Art Gallery, Wynn Macau (24–25 Nov 2026; official ISBN exhibition e-book). Visitors act as directing coach for two live LLM performers across 14 bilingual seeds—pausing, side-coaching, taking over a role, or stepping onstage as human-only Role C. On-site documentation &amp; playable console below; 60-minute workshops via <a href="https://in-resonance.pages.dev" target="_blank" rel="noopener noreferrer">In Resonance ↗</a>.</span><span class="zh">评审制交互艺术装置（作品编号 #340，全会遴选 12 件参展作品之一；刘韦：表演与导演机制设计；Feibi Liu：技术实现），于 2026 年 11 月 24–25 日在澳门永利（Wynn Macau）ICHEC 2026 国际人机交互艺术画廊现场展出，并收录于官方 ISBN 展览电子书。观众可作为表演指导，在 14 组中英双语情境中随时暂停、场外给戏、替演或作为第三人 C 亲自入场。下方附现场展演档案与可交互体验台；可通过 <a href="https://in-resonance.pages.dev" target="_blank" rel="noopener noreferrer">星渐 In Resonance ↗</a> 预约 60 分钟高校与艺术馆工作坊。</span></p>
           </div>
-          <div class="rep-spec">WYNN MACAU · ISBN<br/>PLAYABLE BELOW ↓</div>
+          <div class="rep-spec">EXHIBITED · ARTWORK #340<br/>WYNN MACAU · PLAYABLE ↓</div>
         </div>
       </details>
 
@@ -639,27 +670,42 @@
       </div>
 
       <div class="cinema-asymmetric">
-        <div class="film-lead-plate">
-          <figure class="cinema-frame curtain-img">
-            <img id="lead-enigma-img" src="/assets/enigma-arrival.jpg" alt="The Enigma of Arrival widescreen still featuring Weibo Liu as San Pi" style="aspect-ratio:16/10;" />
-            <div class="cinema-cap">
-              <span>23RD BUSAN IFF WORLD PREMIERE · A WINDOW ON ASIAN CINEMA</span>
-              <span>LEADING ENSEMBLE: SAN PI</span>
-            </div>
-            <div class="cinema-title"><span class="en">The Enigma of Arrival · 《抵达之谜》 (Dir. Song Wen)</span><span class="zh">《抵达之谜》 · 宋文执导院线长片（领衔主演 · 饰三皮）</span></div>
-            <p class="cinema-note"><span class="en">World premiere at the 23rd Busan International Film Festival (2018); official selection at the 9th Beijing IFF, 28th Golden Rooster &amp; Hundred Flowers Film Festival, and 6th Silk Road IFF (2019); nationwide theatrical release (2020).</span><span class="zh">第 23 届釜山国际电影节“亚洲电影之窗”世界首映，入围北京国际电影节、第 28 届金鸡百花电影节及丝绸之路国际电影节，2020 年全国院线上映。</span></p>
-          </figure>
-        </div>
+        <div class="enigma-triptych">
+          <div class="enigma-lead-col">
+            <figure class="cinema-frame curtain-img">
+              <img id="lead-enigma-img" src="/assets/enigma-arrival.jpg" alt="Production still of Weibo Liu as San Pi in crimson bar light in The Enigma of Arrival" style="aspect-ratio:16/10;object-fit:cover;object-position:center 22%;" />
+              <div class="cinema-cap">
+                <span>23RD BUSAN IFF WORLD PREMIERE · A WINDOW ON ASIAN CINEMA</span>
+                <span>LEADING ROLE: SAN PI</span>
+              </div>
+              <div class="cinema-title"><span class="en">The Enigma of Arrival · 《抵达之谜》 (Dir. Song Wen · Prod. Xie Fei)</span><span class="zh">《抵达之谜》 · 宋文执导 / 谢飞监制（领衔主演 · 饰三皮）</span></div>
+              <p class="cinema-note"><span class="en">World premiere in “A Window on Asian Cinema” at the 23rd Busan International Film Festival (2018); official selection at the 9th Beijing IFF, 28th Golden Rooster &amp; Hundred Flowers Film Festival, and 6th Silk Road IFF (2019); nationwide theatrical release (July 2020).</span><span class="zh">第 23 届釜山国际电影节“亚洲电影之窗”世界首映（2018），入围第 9 届北京国际电影节、第 28 届金鸡百花电影节及丝绸之路国际电影节，2020 年 7 月全国院线上映。</span></p>
+            </figure>
+          </div>
 
-        <div class="film-poster-plate">
-          <figure class="cinema-frame">
-            <img src="/assets/biff-enigma-poster.jpg" alt="Theatrical release poster for The Enigma of Arrival featuring Weibo Liu" style="aspect-ratio:7/10;object-fit:cover;object-position:center;" />
-            <div class="cinema-cap">
-              <span>THEATRICAL RELEASE POSTER · 3 FESTIVALS</span>
-              <span>BILLING: LIU WEIBO</span>
-            </div>
-            <div class="cinema-title"><span class="en">Theatrical Release Poster (2020)</span><span class="zh">《抵达之谜》院线公映海报（2020）</span></div>
-          </figure>
+          <div class="enigma-ensemble-col">
+            <figure class="cinema-frame curtain-img">
+              <img src="/assets/enigma-ensemble.jpg" alt="Ensemble still of the four leads in The Enigma of Arrival with Weibo Liu second from left as San Pi" style="aspect-ratio:3/2;object-fit:cover;object-position:center;" />
+              <div class="cinema-cap">
+                <span>ENSEMBLE STILL · PORT-TOWN YOUTH CHRONICLE</span>
+                <span>SAN PI (2ND FROM LEFT)</span>
+              </div>
+              <div class="cinema-title"><span class="en">Ensemble Still: San Pi / Song Bo</span><span class="zh">院线剧照：江城四人组（左二饰宋波 / 三皮）</span></div>
+              <p class="cinema-note"><span class="en">Weibo Liu (second from left) as Song Bo (“San Pi”)—tracking unspoken guilt, fractured memory, and shifting loyalties across a port town in transition.</span><span class="zh">刘韦伯饰宋波（三皮，左二），横跨二十年刻画江边小城青年在失踪事件后的沉默负罪、记忆裂变与成年重逢。</span></p>
+            </figure>
+          </div>
+
+          <div class="enigma-poster-col">
+            <figure class="cinema-frame">
+              <img src="/assets/biff-enigma-poster.jpg" alt="Theatrical release poster for The Enigma of Arrival featuring festival laurels and billing as Weibo Liu" style="aspect-ratio:705/1000;object-fit:cover;object-position:center;" />
+              <div class="cinema-cap">
+                <span>RELEASE POSTER</span>
+                <span>LIU WEIBO</span>
+              </div>
+              <div class="cinema-title"><span class="en">Release Poster (2020)</span><span class="zh">公映主海报（2020）</span></div>
+              <p class="cinema-note"><span class="en">Official theatrical release poster with festival laurels &amp; cast billing.</span><span class="zh">顶部三大电影节桂冠及主演署名“刘韦伯 LIU WEIBO”。</span></p>
+            </figure>
+          </div>
         </div>
 
         <div class="film-mid-a">
@@ -829,9 +875,10 @@
     </section>
 
     <section class="lab-section" id="improvisation">
+      <span id="studio" aria-hidden="true" style="position:absolute;top:-52px;left:0;width:1px;height:1px;pointer-events:none;"></span>
       <div class="lab-brief">
         <div>
-          <div style="font:500 0.74rem/1.5 var(--mono);color:var(--accent);margin-bottom:16px;">ICHEC 2026 MACAU · LIVE REHEARSAL ENGINE</div>
+          <div style="font:500 0.74rem/1.5 var(--mono);color:var(--accent);margin-bottom:16px;">ICHEC 2026 WYNN MACAU · JURIED ARTWORK #340</div>
           <h2 style="font:400 clamp(2.4rem,4.2vw,3.6rem)/0.96 var(--display);margin:0 0 18px;">
             <span class="en">Improvisation<br/><em>Studio</em></span>
             <span class="zh">即兴片场<br/><em>实时给戏台</em></span>
@@ -849,7 +896,7 @@
 
       <div class="improv-stage" id="improv-box" data-focus="both">
         <div class="stage-telemetry">
-          <span>WYNN MACAU ART GALLERY · 24–25 NOV 2026</span>
+          <span>EXHIBITED LIVE · WYNN MACAU ART GALLERY · 24–25 NOV 2026</span>
           <span id="cue-status">CUE 01 · STAND-IN WEDDING HOST (READY)</span>
         </div>
 
@@ -863,6 +910,27 @@
           <button type="button" class="coach-btn" data-scene="blackout"><span class="en">Cue 02 · Power Outage Interruption (Cold Blue)</span><span class="zh">投递指令 02 · 突发停电抢拍（切冷蓝侧逆光）</span></button>
           <button type="button" class="coach-btn" data-scene="handover"><span class="en">Cue 03 · Authority Inversion (Cross-Light)</span><span class="zh">投递指令 03 · 舞台权力倒置（顶光交叉易位）</span></button>
         </div>
+      </div>
+    </section>
+
+    <section class="ichec-doc-section" aria-label="ICHEC 2026 On-Site Exhibition Documentation" data-cue>
+      <div class="ichec-doc-bar">
+        <span><span class="en">ON-SITE EXHIBITION ARCHIVE · ICHEC 2026 ART GALLERY, WYNN MACAU (24–25 NOV 2026)</span><span class="zh">现场展演文献档案 · ICHEC 2026 国际人机交互艺术画廊 · 澳门永利（2026.11.24–25）</span></span>
+        <span class="ichec-meta-r"><span class="en">ARTWORK #340 · 1 OF 12 PEER-REVIEWED WORKS · DISPLAY STATION 05</span><span class="zh">评审入选作品 #340（全会遴选 12 件）· 5 号交互展台</span></span>
+      </div>
+      <div class="ichec-doc-grid">
+        <figure class="ichec-plate">
+          <img src="/assets/ichec-stage-apparatus.jpg" alt="Installed Improvisation Studio curatorial placard #340 and 65-inch live English stage interface at ICHEC 2026 Art Gallery, Wynn Macau" style="object-position:center 48%;" loading="lazy" />
+          <figcaption><span class="en">01 / STATION 05 INSTALLATION IN SITU — CURATORIAL PLACARD (#340), 65&Prime; ENGLISH STAGE &amp; CONSOLE, WYNN MACAU</span><span class="zh">01 / 5 号展台空场装置全景 — #340 官方展签、65 寸英文交互舞台与控制台（澳门永利）</span></figcaption>
+        </figure>
+        <figure class="ichec-plate">
+          <img src="/assets/ichec-audience.jpg" alt="Visitors engaging with the 65-inch live three-chair stage of Improvisation Studio at ICHEC 2026 Art Gallery, Wynn Macau" style="object-position:center 35%;" loading="lazy" />
+          <figcaption><span class="en">02 / LIVE AUDIENCE ROLE-C ENTRY — VISITORS CO-PERFORMING WITH DUAL LLM AGENTS ON THE 65&Prime; STAGE DISPLAY</span><span class="zh">02 / 观众实时入场共演 — 参会者以真人角色 C 介入 65 寸双智能体即兴舞台现场</span></figcaption>
+        </figure>
+        <figure class="ichec-plate">
+          <img src="/assets/ichec-scholars.jpg" alt="Wei Liu presenting Improvisation Studio to visiting HCI and media scholars during the ICHEC 2026 Art Gallery opening" style="object-position:78% 35%;" loading="lazy" />
+          <figcaption><span class="en">03 / GALLERY DIALOGUE — PRESENTING ASYMMETRIC SIDE-COACHING &amp; TRIADIC TAKEOVER TO VISITING HCI SCHOLARS</span><span class="zh">03 / 画廊学术交流 — 向与会人机交互学者演示非对称场外给戏与三方权力交接机制</span></figcaption>
+        </figure>
       </div>
     </section>
 
@@ -936,7 +1004,7 @@
         tx = Math.min(window.innerWidth - 330, e.clientX + 28);
         ty = Math.max(54, Math.min(window.innerHeight - 240, e.clientY - 85));
         const item = e.target.closest('.rep-item');
-        if (item && item.dataset.still && vfImg.src !== item.dataset.still) {
+        if (item && item.dataset.still && vfImg.getAttribute('src') !== item.dataset.still) {
           vfImg.src = item.dataset.still;
           vfCode.textContent = item.dataset.code || '';
         }
